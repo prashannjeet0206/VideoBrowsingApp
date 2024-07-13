@@ -12,9 +12,11 @@ import { IoNewspaperOutline } from "react-icons/io5";
 import { FaTrophy } from "react-icons/fa6";
 import { MdCastForEducation } from "react-icons/md";
 import { SiGooglepodcasts } from "react-icons/si";
+import { useSelector } from "react-redux";
 
 const SideBar = () => {
-  return (
+  const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
+  return !isMenuOpen ? null : (
     <div className="w-[15%]  h-screen mr-4 ml-3">
       <div className="flex flex-col p-5 space-y-3">
         <div className="flex gap-5 bg-slate-100 p-2 rounded-lg place-items-center">

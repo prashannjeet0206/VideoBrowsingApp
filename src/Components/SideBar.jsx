@@ -13,15 +13,18 @@ import { FaTrophy } from "react-icons/fa6";
 import { MdCastForEducation } from "react-icons/md";
 import { SiGooglepodcasts } from "react-icons/si";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const SideBar = () => {
   const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
   return !isMenuOpen ? null : (
     <div className="w-[15%]  h-screen mr-4 ml-3">
       <div className="flex flex-col p-5 space-y-3">
-        <div className="flex gap-5 bg-slate-100 p-2 rounded-lg place-items-center">
-          <IoHomeOutline /> Home
-        </div>
+        <Link to="/">
+          <div className="flex gap-5 bg-slate-100 p-2 rounded-lg place-items-center">
+            <IoHomeOutline /> Home
+          </div>
+        </Link>
         <div className="flex gap-5 hover:bg-slate-100 p-2 rounded-lg place-items-center cursor-pointer">
           <SiYoutubeshorts />
           Shorts
